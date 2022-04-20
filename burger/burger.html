@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Burger</title>
+    <link rel="stylesheet" href="burger.css" type="text/css">
+</head>
+<body>
+
+<h1>Закажи сытный и горячий бургер</h1>
+<form action="#" id="uForm">
+    <fieldset  >
+        <label>
+            <input type="radio" name="size" value="small" data-price="50" data-cal='200' data-tex="Маленький бургер: "  checked> Маленький бургер. стоимость:50, калории:200
+        </label><br>
+        <label >
+            <input type="radio" name="size" value="big" data-price="100" data-cal='300' data-tex="Большой бургер: " > Большой бургер. стоимость:100, калории:300
+            <fieldset >
+                <input type="radio" name="type" value="cheese" data-cal='25' data-tex="сыр " > Сыр. калории:25<br>
+                <input type="radio" name="type" value="salad" data-cal='3' data-tex="салат "> Салат. калории:3<br>
+                <input type="radio" name="type" value="potato" data-cal='55' data-tex="картофель "> Картофель. калории:55<br>
+            </fieldset>
+        </label>
+    </fieldset>
+    <fieldset >
+        <label>
+            <input type="checkbox" name="add" value="seasoning" data-price="15" data-cal='5' data-tex="приправа "> Приправа. стоимость:15, калории:5<br>
+        </label>
+        <label>
+            <input type="checkbox" name="add" value="bacon" data-price="25" data-cal='20' data-tex="бекон "> Бекон. стоимость:25, калории:20<br>
+        </label>
+        <label>
+            <input type="checkbox" name="add" value="cheese" data-price="20" data-cal='25' data-tex="сыр "> Сыр. стоимость:20, калории:25<br>
+        </label>
+        <label>
+            <input type="checkbox" name="add" value="mayonese" data-price="10" data-cal='30' data-tex="майонез "> Майонез. стоимость:10, калории:30
+        </label>
+    </fieldset>
+</form>
+
+<p id='price' >Общая сумма:  </p>
+<p id='calories'>Всего каллорий:  </p>
+<p id="order" >Ваш заказ: </p>
+
+
+    <button id="okBtn" >показать набор</button>
+<button id = "clear" >очистисть</button>
+
+<script src="burger.js"></script>
+
+</body>
+
+</html>
