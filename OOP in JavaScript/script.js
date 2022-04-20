@@ -55,7 +55,6 @@ class Basket {
     add() {
 
     };
-
     remove() {
 
     }
@@ -73,7 +72,7 @@ class Basket {
     }
 }
 
-class BasketItem extends GoodsItem {
+class BasketItem  extends GoodsItem {
     constructor(title, price) {
         super(title, price)
     }
