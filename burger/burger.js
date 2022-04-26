@@ -1,5 +1,5 @@
-let totalCalories = 0
-let totalText = []
+let totalCalories = 0;
+let totalText = [];
 let totalPrice = 0
 
 function caloriesText(el) {
