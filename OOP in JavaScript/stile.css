@@ -6,7 +6,7 @@ body {
 
 header {
     display: flex;
-    background: lightblue;
+    background: #add8e6;
     padding: 50px;
     height: 50px;
 }
@@ -22,9 +22,13 @@ header {
 .button-list {
     position: absolute;
     right: 0;
-    margin:20px 20px 0 0;
+    margin: 20px 20px 0 0;
+    height: 150px;
+    text-align: center;
+    display: inline-block;
 }
-button, .button-box{
+
+button {
     width: 100px;
 }
 
@@ -32,12 +36,6 @@ button:hover {
     background: #0f3186;
     cursor: pointer;
     color: #deeff6;
-}
-
-.button-box {
-    background: lightcyan;
-    height: 150px;
-
 }
 
 .goods-list {
@@ -52,6 +50,28 @@ button:hover {
     text-align: center;
     display: inline-block;
 }
-
-
-
+.invisible{
+    display: none!important;
+   }
+.basket-item{
+    display: flex;
+    align-items: center;
+    border: 1px solid #0f3186;
+}
+.button-box{
+    background:  lightcyan;
+}
+.button-result{
+    font-size: 20px;
+   display: flex;
+   flex-direction: column;
+    background: lightcyan;
+    border: 1px solid #0f3186;
+}
+p{
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+}
+.product-desc{
+    width: 100px;
+}
