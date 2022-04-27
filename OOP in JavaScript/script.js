@@ -112,11 +112,12 @@ class Basket {
     _render() {
         let htmlStr = '';
         let totalAmount = 0;
-        let countPrice = 0
+        let countPrice = 0;
+
         this.items.forEach(good => {
             countPrice += good.price
             totalAmount += good.amount
-            document.querySelector(".button-result").innerHTML = `<p class="totalAmount">всего покупок: ${totalAmount}</p> <p class="totalPrice" >итого: ${countPrice}</p>`
+
 
             htmlStr += `<div class="basket-item">
                             <img  src="${this.image} " width="50px" height="50px" alt="${good.product_name} ">                       
@@ -135,6 +136,11 @@ class Basket {
                         </div>`
         });
         document.querySelector(this.container).innerHTML = htmlStr;//находим товар,
+        if (htmlStr === ''){
+            totalAmount = 0;
+            countPrice = 0
+        }
+        document.querySelector(".button-result").innerHTML = `<p class="totalAmount">всего покупок: ${totalAmount}</p> <p class="totalPrice" >итого: ${countPrice}</p>`
     }
 
     add(good) {
