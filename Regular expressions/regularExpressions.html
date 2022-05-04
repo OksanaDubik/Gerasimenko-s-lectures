@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="regularExpressions.css" rel="stylesheet" type="text/css">
+    <title>Regular Expressions</title>
+</head>
+<body>
+<p>
+    One: 'Hi Mary.' Two: 'Oh, hi.'
+    One: 'How are you doing?'
+    Two: 'I'm doing alright. How about you?'
+    One: 'Not too bad. The weather is great isn't it?'
+    Two: 'Yes. It's absolutely beautiful today.'
+    One: 'I wish it was like this more frequently.'
+    Two: 'Me too.'
+    One: 'So where are you going now?'
+    Two: 'I'm going to meet a friend of mine at the department store.'
+    One: 'Going to do a little shopping?'
+    Two: 'Yeah, I have to buy some presents for my parents.'
+    One: 'What's the occasion?'
+    Two: 'It's their anniversary.'
+    One: 'That's great. Well, you better get going. You don't want to be late.'
+    Two: 'I'll see you next time.'
+    One: 'Sure. Bye.'
+</p>
+<button id="1">Изменить кавычки</button>
+
+<form action="#">
+    <input class="name" placeholder="Имя" type="text" id="name">
+    <p style=display:none id="n">Имя содержит только буквы, начинается с заглавной буквы.</p>
+
+    <input placeholder="Телефон" type="tel" id="tel">
+    <p style=display:none id="t">Телефон имеет вид +7(000)000-0000.</p>
+
+    <input placeholder="E-mail" type="email" id="email">
+    <p style=display:none id="p">E-mail имеет вид mymail@mail.ru, или my.mail@mail.ru, или
+        my-mail@mail.ru.</p>
+</form>
+<button id="send">Отправить</button>
+
+<script>
+    let text = document.querySelector('p');
+    let cont = text.innerText
+    let regexp = /\B'/gi;
+    let newText = cont.replace(regexp, '"');
+
+    document.getElementById('1').addEventListener("click", () => {
+        text.innerHTML = newText
+    })
+
+
+    //*form*//
+
+    let regName = /^([A-Z][a-z]{1,50})|([А-ЯЁ][а-яё]{1,50})/g
+    let nameValue = document.getElementById('name')
+
+    let regTel = /[+7(]\d{3}[)]\d{3}[-]\d{4}/i
+    let tel = document.getElementById('tel')
+
+    let regMail = /\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}/gi
+    let address = document.getElementById('email')
+
+    let checkNam = () => {
+        if (regName.test(nameValue.value) === false) {
+            nameValue.style.borderColor = "red"
+            document.getElementById("n").style.display = "block"
+        }
+    }
+
+    let checkTel = () => {
+        if (regTel.test(tel.value) === false) {
+            tel.style.borderColor = "red"
+            document.getElementById("t").style.display = "block"
+        }
+    }
+
+    let checkAddress = () => {
+        if (regMail.test(address.value) === false) {
+            address.style.borderColor = "red"
+            document.getElementById("p").style.display = "block"
+
+        }
+    }
+
+    document.getElementById('send').addEventListener('click', () => {
+        checkNam()
+        checkTel()
+        checkAddress()
+    })
+
+
+</script>
+</body>
+</html>
